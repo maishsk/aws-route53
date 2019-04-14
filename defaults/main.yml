@@ -1,0 +1,11 @@
+---
+# defaults file for aws-route53
+route53_alias: no
+route53_alias_evaluate_target_health: no
+route53_overwrite: FALSE
+route53_private_zone: yes
+route53_retry_interval: 500
+route53_record_ttl: 3600
+route53_record_type: A
+route53_wait: no
+route53_wait_timeout: 300

@@ -1,0 +1,14 @@
+---
+- name: Create new DNS record
+  route53:
+    state: present
+    zone: "{{ route53_zone }}"
+    hosted_zone_id: "{{ route53_hosted_zone_id | default ('omit') }}"
+    record: "{{ route53_record }}"
+    ttl: "{{ route53_record_ttl }}"
+    type: "{{ route53_record_type }}"
+    value: "{{ route53_record_value }}"
+    private_zone: "{{ route53_private_zone | default ('no') }} "
+    wait: "{{ route53_wait }}"
+    wait_timeout: "{{ route53_wait_timeout }}"
+  register: dns_records

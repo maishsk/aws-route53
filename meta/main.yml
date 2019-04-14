@@ -1,0 +1,9 @@
+galaxy_info:
+  author: Maish Saidel-Keesing
+  description: Create DNS record in Route53 role
+  license: license (BSD)
+  min_ansible_version: 2.4
+  galaxy_tags:
+    - aws
+    - route53
+    - role
