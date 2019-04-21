@@ -55,8 +55,20 @@ Create a `main.yaml` file with the following contents:
   hosts: localhost
   connection: local
   gather_facts: false
-  roles:
-    - ansible-aws-route53
+  tasks:
+  - name: Create Process
+    include_role:
+      name: "{{ item }}"
+    with_items:
+      - aws-route53
+    tags: [ 'never', 'create' ]
+
+  - name: Rollback Process
+    include_role:
+      name: "{{ item }}"
+    with_items:
+      - aws-route53
+    tags: [ 'never', 'rollback' ]
 ```
 
 Create a `vars/vars.yml` with the content similar to:
